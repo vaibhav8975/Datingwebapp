@@ -1,0 +1,12 @@
+- name: install configuration
+  hosts: localhost
+  become: true
+  tasks:
+    - name: install nginx
+      apt:
+       name: nginx
+       state: present
+    - name: start nginx
+      service:
+        name: nginx
+        state: started
